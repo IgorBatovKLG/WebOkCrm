@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<div id="main">
+    <div class="container my-3">
+        <table>
+        <td th:text="${purchase.getBuyer().getName()}"></td>
+        <td th:text="${purchase.getBuyer().getUrl()}"></td>
+        <tr  th:each="s:${purchase.getProducts()}">
+            <td th:text="${s.getName()}"></td>
+            <td th:text="${s.getPrice()}"></td>
+            <td th:text="${s.getUrlImg1()}"></td>
+            <td th:text="${s.getUrlImg2()}"></td>
+            <td th:text="${s.getUrlImg3()}"></td>
+        </tr>
+        </table>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/>
+    <link th:href="@{/css/test.css}" rel="stylesheet" />
+    <script type="text/javascript" th:src="@{/js/jquery.min.js}"></script>
+    <script type="text/javascript" th:src="@{/js/jquery.maskedinput.min.js}"></script>
+    <title>Почта Контроль</title>
+</head>
+
+<body>
+<div id="mainWrapper" class="wrapper ">
+    <div id="mainMessages">
+    </div>
+    <div th:insert="logo :: copy" ></div>
+    <!-- Sidebar -->
+    <nav id="sidebar" style="flex-direction: column; display:flex" th:insert="navbar :: copy"></nav>
+    <nav id="content-nav" class="navbar navbar-expand-lg navbar-light bg-light">
+
+    </nav>
+    <div id="main-toolbar">
+
+    </div>
+    <div id="main">
+        <div class="container my-3">
+            <section class="my-5">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-8 mx-auto">
+                            <h2>Загрузить файл</h2>
+                            <p th:text="${message}" th:if="${message ne null}" class="alert alert-primary"></p>
+                            <form method="post" th:action="@{/upload}" enctype="multipart/form-data">
+                                <div class="form-group">
+                                    <input type="file" name="file" class="form-control-file">
+
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <div class="col">
+                                                <td><h1>Пароль</h1></td>
+                                                <input type="text" name="password"  class="snils form-control form-control-lg">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="col">
+                                                <td><h1>Дата</h1></td>
+                                                <input name="date" class="app-datepicker form-control app-date" type="date"/>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+                                </div>
+                                <button type="submit" class="btn btn-primary">Upload File</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    <div id="statusBar"><span id="statusMsg"></span></div>
+</div>
+</body>
+
+</html>

@@ -1,0 +1,22 @@
+spring:
+  datasource:
+#    url: jdbc:h2:mem:testdb
+    url: jdbc:postgresql://45.11.27.44:5432/postgres
+    initialization-mode: always
+    username: rooti
+    password: new_password
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    generate-ddl: true
+    hibernate:
+#      ddl-auto: create-drop
+
+    show-sql: false
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+
+
+server:
+  port: 1111
+
