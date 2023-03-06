@@ -35,7 +35,7 @@ public class ProductController {
         ArrayList<ProductModel> productModels = new ArrayList<>();
         for (String s : split) {
             String[] split1 = s.split(";");
-            productModels.add(new ProductModel(0, split1[0], Integer.parseInt(split1[1]), Integer.parseInt(split1[2]), Integer.parseInt(split1[3]), split1[4], split1[5], split1[6], split1[7]));
+            productModels.add(new ProductModel(0, Integer.parseInt(split1[0]), split1[1], Integer.parseInt(split1[2]), Integer.parseInt(split1[3]), Integer.parseInt(split1[4]), split1[5], split1[6], split1[7], split1[8]));
         }
         for (ProductModel productModel : productModels) {
             productService.saveProduct(productModel);

@@ -20,6 +20,7 @@ public class ProductModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    private int idShop;
     private String name;
     private int price;
     private int margin;

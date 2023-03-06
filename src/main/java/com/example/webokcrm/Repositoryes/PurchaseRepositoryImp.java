@@ -30,5 +30,11 @@ public class PurchaseRepositoryImp implements PurchaseRepository {
     public PurchaseModel getPurchasesbyId(int id){
         return em.find(PurchaseModel.class, id);
     }
+    @Override
+    public PurchaseModel getPurchaseByTrack(int track){
+        return em.createQuery("select p from PurchaseModel p where p.track = :track", PurchaseModel.class)
+                .setParameter("track", track)
+                .getSingleResult();
+    }
 
 }

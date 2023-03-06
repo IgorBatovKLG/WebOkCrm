@@ -11,4 +11,6 @@ public interface PurchaseRepository {
     PurchaseModel getPurchasesByBuyerId(int id);
 
     PurchaseModel getPurchasesbyId(int id);
+
+    PurchaseModel getPurchaseByTrack(int track);
 }

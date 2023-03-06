@@ -25,7 +25,6 @@ public class PurchaseService {
     }
 
     public PurchaseModel getPurchaseByTrack(int track){
-        //todo реализация
-        return getPurchase(1);
+        return purchaseRepository.getPurchaseByTrack(track);
     }
 }
